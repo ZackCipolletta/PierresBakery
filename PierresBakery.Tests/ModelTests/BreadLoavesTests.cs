@@ -10,7 +10,8 @@ namespace PierresBakery.Tests
     [TestMethod]
     public void BreadLoavesConstructor_CreatesInstanceOfBreadLoaves_BreadLoaves()
     {
-      BreadLoaves newBreadLoaves = new BreadLoaves();
+      BreadLoaves newBreadLoaves = new BreadLoaves(1);
+      Assert.AreEqual(newBreadLoaves.CustomerOrder, 1);
     }
   }
 }
