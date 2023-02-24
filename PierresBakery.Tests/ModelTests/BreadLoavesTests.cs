@@ -31,11 +31,9 @@ namespace PierresBakery.Tests
     [TestMethod]
     public void GetTotalCostForBreadOrderSale_ReturnsTotalCostForNumberOfLoavesOrderedWithBuy2Get1FreeSale_Int()
     {
-      BreadLoaves newBreadLoaves = new BreadLoaves(5);
-      Assert.AreEqual(20, newBreadLoaves.TotalPrice());
+      BreadLoaves newBreadLoaves = new BreadLoaves(7);
+      Assert.AreEqual(25, newBreadLoaves.TotalPrice());
     }
-
-
 
   }
 }
