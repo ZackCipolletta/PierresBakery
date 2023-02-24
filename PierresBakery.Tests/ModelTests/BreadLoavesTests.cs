@@ -1,5 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ShapeTracker.Models;
+using PierresBakery.Models;
 
 namespace PierresBakery.Tests
 {
@@ -8,9 +8,9 @@ namespace PierresBakery.Tests
   {
 
     [TestMethod]
-    public void RectangleConstructor_CreatesInstanceOfRectangle_Rectangle()
+    public void BreadLoavesConstructor_CreatesInstanceOfBreadLoaves_BreadLoaves()
     {
-      Rectangle newRectangle = new Rectangle(2, 3);
+      BreadLoaves newBreadLoaves = new BreadLoaves();
     }
   }
 }
