@@ -23,7 +23,7 @@ namespace PierresBakery.Models
         int BreadLoavesOrderCost = PricePerLoaf() * ((CustomerOrder / 3) * 2);
         return BreadLoavesOrderCost;
       }
-      else if (CustomerOrder % 3 == 1 || CustomerOrder % 3 == 2)
+      else if (CustomerOrder % 3 > 0)
       {
         int BreadLoavesOrderCost = PricePerLoaf() * ((CustomerOrder / 3) * 2) + CustomerOrder % 3 * PricePerLoaf();
         return BreadLoavesOrderCost;

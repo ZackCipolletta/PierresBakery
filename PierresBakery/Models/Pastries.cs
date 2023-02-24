@@ -20,7 +20,22 @@ namespace PierresBakery.Models
 
     public int TotalPrice()
     {
-      return PricePerPastry() * CustomerPastriesOrder;
+      if (CustomerPastriesOrder % 4 == 0)
+      {
+        int PastriesOrderCost = PricePerPastry() * ((CustomerPastriesOrder / 4) * 3);
+        return PastriesOrderCost;
+      }
+      else if (CustomerPastriesOrder % 4 > 0)
+      {
+        int PastriesOrderCost = PricePerPastry() * ((CustomerPastriesOrder / 4) * 3) + CustomerPastriesOrder % 4 * PricePerPastry();
+        return PastriesOrderCost;
+      }
+      else
+      {
+        return CustomerPastriesOrder * PricePerPastry();
+      }
     }
   }
+
+
 }

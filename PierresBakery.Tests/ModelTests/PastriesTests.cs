@@ -28,5 +28,12 @@ namespace PierresBakery.Tests
       Assert.AreEqual(6, newPastries.TotalPrice());
     }
 
+        [TestMethod]
+    public void GetTotalCostForPastriesOrderSale_ReturnsTotalCostForNumberOfPastriesOrderedWithBuy3Get1FreeSale_Int()
+    {
+      Pastries newPastries = new Pastries(8);
+      Assert.AreEqual(12, newPastries.TotalPrice());
+    }
+
   }
 }
