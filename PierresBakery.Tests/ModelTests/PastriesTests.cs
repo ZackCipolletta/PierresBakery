@@ -14,11 +14,19 @@ namespace PierresBakery.Tests
       Assert.AreEqual(3, newPastries.CustomerPastriesOrder);
     }
 
-        [TestMethod]
+    [TestMethod]
     public void GetPricePerPastry_ReturnsCostPerPastry_Int()
     {
       Pastries newPastries = new Pastries(3);
       Assert.AreEqual(newPastries.PricePerPastry(), 2);
     }
+
+    [TestMethod]
+    public void GetTotalCostForPastry_ReturnsTotalCostForNumberOfPastriesOrdered_Int()
+    {
+      Pastries newPastries = new Pastries(3);
+      Assert.AreEqual(6, newPastries.TotalPrice());
+    }
+
   }
 }

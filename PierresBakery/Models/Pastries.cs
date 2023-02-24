@@ -6,22 +6,21 @@ namespace PierresBakery.Models
   {
     public int CustomerPastriesOrder { get; set; }
     private static int _costPerPastry;
+
     public Pastries(int numberOfPastries)
     {
       CustomerPastriesOrder = numberOfPastries;
-            _costPerPastry = 2;
+      _costPerPastry = 2;
     }
 
-        public int PricePerPastry()
+    public int PricePerPastry()
     {
       return (_costPerPastry);
     }
 
+    public int TotalPrice()
+    {
+      return PricePerPastry() * CustomerPastriesOrder;
+    }
   }
-
 }
-
-    // public int PricePerLoaf()
-    // {
-    //   return (_costPerLoaf);
-    // }
