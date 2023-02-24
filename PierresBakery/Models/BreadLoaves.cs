@@ -5,7 +5,7 @@ namespace PierresBakery.Models
   public class BreadLoaves
   {
     public int CustomerOrder { get; set; }
-    private static int _costPerLoaf;
+    private static int _costPerLoaf; // Since we want both Pastries and BreadLoaves to have this private static field, we could create a new new bakery class that they could inherit this class from instead of creating it for both of them. Also maybe same thing for CsutomerOrder?
     public BreadLoaves(int numberOfLoaves)
     {
       CustomerOrder = numberOfLoaves;
@@ -18,10 +18,21 @@ namespace PierresBakery.Models
 
     public int TotalPrice()
     {
-      int BreadLoavesOrderCost = PricePerLoaf() * CustomerOrder;
-      return (BreadLoavesOrderCost);
+      if (CustomerOrder % 3 == 0)
+      {
+        int BreadLoavesOrderCost = PricePerLoaf() * ((CustomerOrder / 3) * 2);
+        return BreadLoavesOrderCost;
+      }
+      else if (CustomerOrder % 3 == 1 || CustomerOrder % 3 == 2)
+      {
+        int BreadLoavesOrderCost = PricePerLoaf() * ((CustomerOrder / 3) * 2) + CustomerOrder % 3 * PricePerLoaf();
+        return BreadLoavesOrderCost;
+      }
+      else
+      {
+        return PricePerLoaf() * CustomerOrder;
+      }
     }
-
 
   }
 
