@@ -11,12 +11,16 @@ namespace PierresBakery.Models
       CustomerOrder = numberOfLoaves;
       _costPerLoaf = 5;
     }
-        public int GetPricePerLoaf()
+    public int PricePerLoaf()
     {
       return (_costPerLoaf);
     }
 
-
+    public int TotalPrice()
+    {
+      int BreadLoavesOrderCost = PricePerLoaf() * CustomerOrder;
+      return (BreadLoavesOrderCost);
+    }
 
 
   }
