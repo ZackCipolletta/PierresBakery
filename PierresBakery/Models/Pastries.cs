@@ -1,14 +1,12 @@
-using System.Collections.Generic;
-
 namespace PierresBakery.Models
 {
-  public class Pastries : BakeryItems
+  public class Pastries
   {
     public int CustomerPastriesOrder { get; set; }
+    private static int _costPerItem = 2;
     public Pastries(int numberOfPastries)
     {
       CustomerPastriesOrder = numberOfPastries;
-      _costPerItem = 2;
     }
 
     public int PricePerPastry()
@@ -18,22 +16,16 @@ namespace PierresBakery.Models
 
     public int TotalPrice()
     {
+      int PastriesOrderCost = PricePerPastry() * ((CustomerPastriesOrder / 4) * 3);
       if (CustomerPastriesOrder % 4 == 0)
       {
-        int PastriesOrderCost = PricePerPastry() * ((CustomerPastriesOrder / 4) * 3);
-        return PastriesOrderCost;
-      }
-      else if (CustomerPastriesOrder % 4 > 0)
-      {
-        int PastriesOrderCost = PricePerPastry() * ((CustomerPastriesOrder / 4) * 3) + CustomerPastriesOrder % 4 * PricePerPastry();
         return PastriesOrderCost;
       }
       else
       {
-        return CustomerPastriesOrder * PricePerPastry();
+        PastriesOrderCost += CustomerPastriesOrder % 4 * PricePerPastry();
+        return PastriesOrderCost;
       }
     }
   }
-
-
 }

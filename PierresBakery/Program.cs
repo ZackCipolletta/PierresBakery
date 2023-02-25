@@ -27,7 +27,8 @@ namespace PierresBakery
       int pastries = int.Parse(numberOfPastries);
       Pastries pastriesOrder = new Pastries(pastries);
       Console.WriteLine($"You have ordered {pastriesOrder.CustomerPastriesOrder} pastries. The total cost of your pastry order is: ${pastriesOrder.TotalPrice()}.");
-      Console.WriteLine($"You have ordered {loaves} loaves of bread and {pastries} pastries.  Your order total is: ${breadOrder.TotalPrice() + pastriesOrder.TotalPrice()}.");
+
+        Console.WriteLine($"You have ordered {breadOrder.CustomerOrder} loaves of bread and {pastriesOrder.CustomerPastriesOrder} pastries.  Your order total is:  ${(breadOrder.TotalPrice() + pastriesOrder.TotalPrice())}.");
       Console.WriteLine("======================================================================");
       Console.WriteLine("Would you like to edit your order? If so type 'yes', otherwise type anything else.");
       string orderEdit = Console.ReadLine();
@@ -37,7 +38,7 @@ namespace PierresBakery
         string loavesEdit = Console.ReadLine();
         if (loavesEdit == "yes" || loavesEdit == "Yes")
         {
-          Console.WriteLine("How many more loaves of bread would you like to buy (using numbers only)?");
+          Console.WriteLine("How many loaves of bread would you like to buy (using numbers only)?");
           int changeLoavesOrder = int.Parse(Console.ReadLine());
           breadOrder.CustomerOrder = changeLoavesOrder;
         }
@@ -49,7 +50,7 @@ namespace PierresBakery
           string changePastriesOrder = Console.ReadLine();
           pastriesOrder.CustomerPastriesOrder = int.Parse(changePastriesOrder);
         }
-        Console.WriteLine($"You have ordered {breadOrder.CustomerOrder} loaves of bread and {pastriesOrder.CustomerPastriesOrder} pastries.  Your order total is: ${breadOrder.TotalPrice() + pastriesOrder.TotalPrice()}.");
+        Console.WriteLine($"You have ordered {breadOrder.CustomerOrder} loaves of bread and {pastriesOrder.CustomerPastriesOrder} pastries.  Your order total is:  ${(breadOrder.TotalPrice() + pastriesOrder.TotalPrice())}.");
       }
       Console.WriteLine("If you would like to start a new order please type 'yes'.");
       string startOver = Console.ReadLine();
@@ -59,10 +60,8 @@ namespace PierresBakery
       }
       else
       {
-        Console.WriteLine($"Final total: ${breadOrder.TotalPrice() + pastriesOrder.TotalPrice()}");
+        Console.WriteLine($"Final total: ${(breadOrder.TotalPrice() + pastriesOrder.TotalPrice())}");
       }
     }
-
   }
-
 }
