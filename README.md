@@ -9,6 +9,7 @@
 * C#
 
 ## Description
+This is a basic console app built using C#.  A user can select the number of loaves of bread and pastries they would like to buy and the app will give them a total price including any sales.  The app will also give them an opportunity to change their order or start their order over.
 
 
 ## Setup/Installation Requirements
