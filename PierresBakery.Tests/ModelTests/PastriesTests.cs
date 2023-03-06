@@ -17,8 +17,11 @@ namespace PierresBakery.Tests
     [TestMethod]
     public void GetPricePerPastry_ReturnsCostPerPastry_Int()
     {
-      Pastries newPastries = new Pastries(3);
-      Assert.AreEqual(newPastries.PricePerPastry(), 2);
+      Pastries newPastries = new Pastries(1);
+
+      int restult = newPastries.TotalPrice();
+
+      Assert.AreEqual(restult, 2);
     }
 
     [TestMethod]
